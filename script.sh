@@ -2,4 +2,4 @@
 echo "hello world"
 date
 whoami
-ifconfig
+echo "try webhooks"
