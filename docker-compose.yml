@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  nodejsapp:
+    build:
+      context: .
+    image: node:v1
+#     env_file:
+#       - .env
+    ports:
+      - 5000:3000
+
+    volumes:
+      - logs_app:/app/logs
+
+volumes:
+  logs_app:
