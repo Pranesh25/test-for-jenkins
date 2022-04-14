@@ -57,7 +57,7 @@ environment {
        stage('Docker Run') {
      steps{
          script {
-                sh 'docker run -d -p 8096:5000 --rm --name mypythonContainer 354481699343.dkr.ecr.us-east-2.amazonaws.com/your_ecr_repo:latest'
+                sh 'docker run -d -p 8096:5000 --rm --name mypythonContainer 354481699343.dkr.ecr.us-east-2.amazonaws.com/mydocker-test:latest'
             }
       }
     }
