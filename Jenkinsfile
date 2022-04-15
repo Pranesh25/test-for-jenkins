@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node{
+            label 'redhat1'
+        }
+    }
     stages {
         stage('Example') {
             steps {
