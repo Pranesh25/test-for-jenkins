@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install
+  pre_build:
+    commands:
+      - npm install express dotenv
+    
+  build:
+    commands:
+      - npm run server.js
