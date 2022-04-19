@@ -10,4 +10,4 @@ phases:
     
   build:
     commands:
-      - npm run server.js
+      - ./run.sh
