@@ -43,25 +43,16 @@ pipeline{
  	}
  	
  	
- 	stage('test'){
+ 	stage('deploy'){
  	    
  	    steps{
  	        script{
  	            sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 104247799220.dkr.ecr.us-east-1.amazonaws.com'
  	             sh 'docker push 104247799220.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest'
+			sh 'docker run -d -p 8096:5000 --rm --name mypythonContainer 104247799220.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest'
  	        }
  	    }
- 	}
- 	
- 	
- 	stage('deploy') {
-     steps{
-         script {
-                sh 'docker run -d -p 8096:5000 --rm --name mypythonContainer 104247799220.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest'
-            }
-      }
-    }
-    
+ 	}  
     
     
     
