@@ -11,7 +11,7 @@ pipeline{
      steps{
  	        script{
  	            sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 104247799220.dkr.ecr.us-east-1.amazonaws.com'
-              sh 'docker build -t mydocker-test .'
+              sh 'docker build -t mydocker-test /home/ec2-user/test-for-jenkins/'
               sh 'docker tag mydocker-test:latest 104247799220.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest'
  	             
  	        }
