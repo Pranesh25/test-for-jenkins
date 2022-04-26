@@ -31,7 +31,8 @@ pipeline{
  	        script {
               sh 'aws ecr create-repository  --repository-name mydpcker-test --region us-east-1'
 	      sh 'aws ecs create-cluster --cluster-name fargate-cluster'
- 	            sh 'aws ecs create-service --cluster fargate-cluster --service-name fargate-service --task-definition sample-fargate:1 --desired-count 1 --launch-type "FARGATE" --network-configuration "awsvpcConfiguration={[subnet-02d7be78add1c719e],securityGroups=[sg-03f74e79aa2990424],assignPublicIp=ENABLED}"'
+	      sh 'aws ecs register-task-definition --cli-input-json file://./root/test-for-jenkins/task.json'
+ 	            
  	            
  	        }
  	    }
