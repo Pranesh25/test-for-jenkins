@@ -6,8 +6,8 @@ phases:
       - npm install
   pre_build:
     commands:
-      - npm install express dotenv
+      - npm install  dotenv
     
   build:
     commands:
-      - ./run.sh
+      - node  server.js
